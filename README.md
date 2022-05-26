@@ -345,6 +345,43 @@ sudo ln -s /etc/nginx/sites-available/sanjeev.xyz /etc/nginx/sites-enabled/
 systemctl restart nginx
 ```
 
+
+## 7A (Alternative - do only If above process for Nginx does not work) Installing Nginx
+https://blog.logrocket.com/how-to-run-a-node-js-server-with-nginx/
+
+Some of the issues faced & now resolved -
+sudo nginx -t     # is used for testing nginx configuration it should output success
+if having any error try clean uninstall of nginx using below cmds in ubuntu -
+sudo apt-get remove nginx nginx-common
+sudo apt-get purge nginx nginx-common
+sudo apt-get autoremove
+
+then, install again and setup
+
+
+For Simplicity Faisal has Included Sample nginx file -
+```
+#The Nginx server instance
+server{
+    listen 80;
+    server_name 52.201.246.217; # Public IP for EC2 or Domain name
+    location / {
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $host;
+        proxy_pass http://127.0.0.1:4500; // localhost with PORT which project is running ON
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        # location /overview {
+        #     proxy_pass http://127.0.0.1:4500$request_uri; // localhost with project PORT
+        #     proxy_redirect off;
+        # }
+    }
+}
+```
+
+
+
 ## 8. Configure Environment Variables
 We now need to make sure that all of the proper environment variables are setup on our production Ubuntu Server. In our development environment, we made use of a package called dotenv to load up environment variables. In the production environment the environment variables are going to be set on the OS instead of within Node. 
 
