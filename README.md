@@ -478,8 +478,9 @@ export NODE_OPTIONS=--max_old_space_size=4096
 ```
 
 ####### If want to start using PM2
+```
 pm2 start /home/ubuntu/apps/...path................../dist/index.js --name sf-app
-
+```
 --------------------------------------
 
 ## Authors
