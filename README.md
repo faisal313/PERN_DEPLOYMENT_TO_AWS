@@ -481,6 +481,14 @@ export NODE_OPTIONS=--max_old_space_size=4096
 ```
 pm2 start /home/ubuntu/apps/...path................../dist/index.js --name sf-app
 ```
+
+
+#### Frontend Error(s) Soln -
+###### Node sass error fix (use node - 12)
+Use --unsafe-perm=true and --allow-root flags with npm install like below:-
+
+sudo npm install node-sass --unsafe-perm=true --allow-root
+
 --------------------------------------
 
 ## Authors
