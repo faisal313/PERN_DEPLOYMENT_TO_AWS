@@ -452,6 +452,28 @@ Get and install certificates using interactive prompt
 sudo certbot --nginx
 ```
 
+
+
+ADDITIONAL USEFUL TIPS -
+If instance is having let say 1GB (free-tier) of RAM then, it can be increased by creating Swap File which will aid OS in getting it as Addition RAM
+https://devstudioonline.com/article/increase-memory-ram-in-ubuntu-linux-by-using-swap-file
+
+---------------------------------
+for giving permission -
+chmod 777 -R apps
+OR
+chmod 777 -R /var/www/html
+(depending upon project location)
+
+Note -> -R is for doing recursively for all child (sub) folders
+----------------------------
+
+for getting rid of heap size error in Node -
+```
+export NODE_OPTIONS=--max_old_space_size=4096
+```
+--------------------------------------
+
 ## Authors
 * **Mohammad Faisal Khan** - *Future CEO*
 
