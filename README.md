@@ -454,8 +454,8 @@ sudo certbot --nginx
 
 
 
-ADDITIONAL USEFUL TIPS -
-If instance is having let say 1GB (free-tier) of RAM then, it can be increased by creating Swap File which will aid OS in getting it as Addition RAM
+### ADDITIONAL USEFUL TIPS -
+###### If instance is having let say 1GB (free-tier) of RAM then, it can be increased by creating Swap File which will aid OS in getting it as Addition RAM
 https://devstudioonline.com/article/increase-memory-ram-in-ubuntu-linux-by-using-swap-file
 
 ---------------------------------
