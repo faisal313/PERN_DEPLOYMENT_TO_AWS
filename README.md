@@ -459,11 +459,15 @@ sudo certbot --nginx
 https://devstudioonline.com/article/increase-memory-ram-in-ubuntu-linux-by-using-swap-file
 
 ---------------------------------
-for giving permission -
+###### for giving permission -
+```
 chmod 777 -R apps
-OR
+```
+####### OR
+```
 chmod 777 -R /var/www/html
-(depending upon project location)
+```
+####### (depending upon project location)
 
 ##### Note: -R is for doing recursively for all child (sub) folders
 ----------------------------
