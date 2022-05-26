@@ -465,10 +465,10 @@ OR
 chmod 777 -R /var/www/html
 (depending upon project location)
 
-Note -> -R is for doing recursively for all child (sub) folders
+##### Note: -R is for doing recursively for all child (sub) folders
 ----------------------------
 
-for getting rid of heap size error in Node -
+####### for getting rid of heap size error in Node -
 ```
 export NODE_OPTIONS=--max_old_space_size=4096
 ```
