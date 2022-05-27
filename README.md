@@ -341,6 +341,7 @@ The last section is so that nginx can handle traffic destined to the backend. No
 
 **Enable the new site**
 ```
+sudo nginx -t # for testing config file
 sudo ln -s /etc/nginx/sites-available/sanjeev.xyz /etc/nginx/sites-enabled/
 systemctl restart nginx
 ```
@@ -364,16 +365,22 @@ For Simplicity Faisal has Included Sample nginx file -
 #The Nginx server instance
 server{
     listen 80;
-    server_name 52.201.246.217; # Public IP for EC2 or Domain name
-    location / {
+    server_name 52.201.246.217;
+
+     location / {
+                root /home/ubuntu/apps/formosal/slamform-client/build;
+                try_files $uri $uri/ =404;
+     }
+
+    location /api/ {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
-        proxy_pass http://127.0.0.1:4500; // localhost with PORT which project is running ON
+        proxy_pass http://127.0.0.1:4500;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
         # location /overview {
-        #     proxy_pass http://127.0.0.1:4500$request_uri; // localhost with project PORT
+        #     proxy_pass http://127.0.0.1:4500$request_uri;
         #     proxy_redirect off;
         # }
     }
