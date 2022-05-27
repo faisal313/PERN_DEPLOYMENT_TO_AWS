@@ -489,6 +489,12 @@ export NODE_OPTIONS=--max_old_space_size=4096
 pm2 start /home/ubuntu/apps/...path................../dist/index.js --name sf-app
 ```
 
+##### Set ENV *** on server
+```
+export NODE_ENV=development
+OR
+export NODE_ENV=production
+```
 
 #### Frontend Error(s) Soln -
 ###### Node sass error fix (use node - 12)
