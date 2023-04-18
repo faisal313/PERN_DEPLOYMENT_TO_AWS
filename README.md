@@ -345,6 +345,7 @@ The last section is so that nginx can handle traffic destined to the backend. No
 
 #### below is an example of default nginx conf -
 
+```
 server {
 
         server_name api.radar.taxi;
@@ -361,6 +362,7 @@ server {
 
 }
 
+```
 
 **Enable the new site**
 ```
